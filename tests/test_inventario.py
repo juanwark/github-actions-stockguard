@@ -14,5 +14,8 @@ def test_stock_normal():
     assert clasificar_stock(30, 20) == "NORMAL"
 
 def test_stock_invalido():
-    with pytest.raises (ValueError):
+    with pytest.raises(ValueError):
         clasificar_stock(-2, 20)
+
+def test_stock_sobrestock():
+    assert clasificar_stock(50, 20) == "SOBRESTOCK"
